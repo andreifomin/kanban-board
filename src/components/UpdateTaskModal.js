@@ -43,6 +43,7 @@ function UpdateTaskModal(props) {
       <Button
         color="white"
         className="btn btn-outline-warning"
+        style={{minWidth: "80px"}}
         onClick={toggle}
       >
         Update

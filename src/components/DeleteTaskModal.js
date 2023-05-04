@@ -36,6 +36,7 @@ function DeleteTaskModal(props) {
       <Button
         color="white"
         className="btn btn-outline-danger"
+        style={{minWidth: "80px"}}
         onClick={toggle}
       >
         Delete

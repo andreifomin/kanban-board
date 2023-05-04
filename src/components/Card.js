@@ -48,6 +48,7 @@ function Card(props) {
           <button
             type="button"
             className="btn btn-outline-primary"
+            style={{width: "32px", height: "32px", padding: "0px"}}
             onClick={() => changeStatus(task._id, task.status, -1)}
             disabled={task.status === statusesTitles[0]}
           >
@@ -57,6 +58,7 @@ function Card(props) {
           <button
             type="button"
             className="btn btn-outline-primary"
+            style={{width: "32px", height: "32px", padding: "0px"}}
             onClick={() => changeStatus(task._id, task.status, 1)}
             disabled={task.status === statusesTitles[statusesTitles.length - 1]}
           >
@@ -65,18 +67,21 @@ function Card(props) {
         </li>
         {/* Priority and buttons Priority_up, Priority_down */}
         <li className="list-group-item">
-          Priority: {priorityToWord(+task.priority)}{" "}
+          Priority:{" "}
           <button
             type="button"
             className="btn btn-outline-primary btn-sm"
+            style={{width: "24px", height: "24px", padding: "0px"}}
             onClick={() => changePriority(task._id, +task.priority - 1)}
             disabled={priorities[0] === +task.priority}
           >
             ↑
           </button>{" "}
+          {priorityToWord(+task.priority)}{" "}
           <button
             type="button"
             className="btn btn-outline-primary btn-sm"
+            style={{width: "24px", height: "24px", padding: "0px"}}
             onClick={() => changePriority(task._id, +task.priority + 1)}
             disabled={priorities[priorities.length - 1] === +task.priority}
           >
