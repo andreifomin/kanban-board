@@ -1,4 +1,6 @@
 import React from "react";
+import DeleteTaskModal from "./DeleteTaskModal";
+import UpdateTaskModal from "./UpdateTaskModal";
 
 function Card(props) {
   const {
@@ -8,6 +10,7 @@ function Card(props) {
     changeStatus,
     changePriority,
     priorities,
+    updateTask,
     deleteTask,
   } = props;
 
@@ -85,17 +88,9 @@ function Card(props) {
       {/* Buttons Delete, Update */}
       <div className="card-body">
         {/* Button Update */}
-        <button type="button" className="btn btn-outline-warning">
-          Update
-        </button>{" "}
+        <UpdateTaskModal task={task} updateTask={updateTask} />{" "}
         {/* Button Delete */}
-        <button
-          type="button"
-          className="btn btn-outline-danger"
-          onClick={() => deleteTask(task._id)}
-        >
-          Delete
-        </button>{" "}
+        <DeleteTaskModal task={task} deleteTask={deleteTask} />
       </div>
     </div>
   );

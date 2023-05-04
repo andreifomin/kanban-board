@@ -53,7 +53,7 @@ function CreateNewTaskModal(props) {
           <div>
             {/* Input Task_name, Task_description */}
             <InputGroup>
-              <InputGroupText>Title</InputGroupText>
+              <InputGroupText>Name</InputGroupText>
               <Input
                 value={name}
                 onChange={(event) => setName(event.target.value)}

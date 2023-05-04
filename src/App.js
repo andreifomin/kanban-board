@@ -32,9 +32,6 @@ function App() {
     getTasks();
   }, []);
 
-  // console.log(statuses)
-  // console.log(tasks)
-
   const changePriority = (id, newPriority) => {
     axios
       .patch(`https://expressjs-server.vercel.app/tasks/${id}`, {
@@ -58,6 +55,13 @@ function App() {
   const createNewTask = (newTask) => {
     axios
       .post(`https://expressjs-server.vercel.app/tasks`, newTask)
+      .then(() => getTasks())
+      .catch(() => alert("Task not found"));
+  };
+
+  const updateTask = (id, updatedTask) => {
+    axios
+      .patch(`https://expressjs-server.vercel.app/tasks/${id}`, {...updatedTask})
       .then(() => getTasks())
       .catch(() => alert("Task not found"));
   };
@@ -93,6 +97,7 @@ function App() {
               changeStatus={changeStatus}
               changePriority={changePriority}
               priorities={priorities}
+              updateTask={updateTask}
               deleteTask={deleteTask}
             />
           ))}

@@ -2,7 +2,16 @@ import React from "react";
 import Card from "./Card";
 
 function Column(props) {
-  const { status, tasks, statusesTitles, changeStatus, changePriority, priorities, deleteTask } = props;
+  const {
+    status,
+    tasks,
+    statusesTitles,
+    changeStatus,
+    changePriority,
+    priorities,
+    updateTask,
+    deleteTask,
+  } = props;
 
   return (
     <div className="col">
@@ -18,6 +27,7 @@ function Column(props) {
             changeStatus={changeStatus}
             changePriority={changePriority}
             priorities={priorities}
+            updateTask={updateTask}
             deleteTask={deleteTask}
           />
         ))}
